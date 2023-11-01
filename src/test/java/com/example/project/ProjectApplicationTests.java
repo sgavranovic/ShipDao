@@ -1,4 +1,4 @@
-package com.example.projekt;
+package com.example.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.context.ApplicationContext;
 import static org.bson.assertions.Assertions.assertNotNull;
 
 @SpringBootTest
-class ProjektApplicationTests {
+class ProjectApplicationTests {
 
     @Autowired
     private ApplicationContext context;
