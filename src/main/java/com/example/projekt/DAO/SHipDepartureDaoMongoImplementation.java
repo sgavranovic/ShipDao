@@ -8,17 +8,19 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.Optional;
+
 @Component
 @Profile("mongo")
-public class SHipDepartureDaoMongoImplementation implements ShipDepartureDao {
+public class ShipDepartureDaoMongoImplementation implements ShipDepartureDao {
 
     @Autowired
     ShipDepartureDaoRepository repository;
 
     @Autowired
     Mapper mapper;
+    
     @Override
-    public Optional<ShipDeparture> FIndByDateAndShipId(LocalDate date, String ShipId) {
+    public Optional<ShipDeparture> findByDateAndShipId(LocalDate date, String ShipId) {
         return repository.findByDepartureDateAndShipId(date, ShipId);
     }
 
