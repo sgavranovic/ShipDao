@@ -22,9 +22,9 @@ public class ShipDepartureApi {
     Mapper mapper;
 
     @GetMapping(path = "departure")
-    public ShipDepartureModel getDeparture(@RequestParam(name="date") String date, @RequestParam(name="shipId") String shipId){
+    public ShipDepartureModel getDeparture(@RequestParam(name="date") String date, @RequestParam(name="shipId") String shipId) {
         LocalDate localDate = LocalDate.parse(date);
-        Optional<ShipDeparture>departureOptional = shipDepartureDao.FIndByDateAndShipId(localDate, shipId);
+        Optional<ShipDeparture> departureOptional = shipDepartureDao.findByDateAndShipId(localDate, shipId);
         if (departureOptional.isEmpty()){
             return new ShipDepartureModel();
         }
@@ -34,11 +34,8 @@ public class ShipDepartureApi {
     }
 
     @PostMapping(path = "departure")
-    public void createDeparture(@RequestBody ShipDepartureModel model){
+    public void createDeparture(@RequestBody ShipDepartureModel model) {
         ShipDeparture departure = mapper.mapToDeparture(model);
         shipDepartureDao.save(departure);
     }
-
-
-
 }
