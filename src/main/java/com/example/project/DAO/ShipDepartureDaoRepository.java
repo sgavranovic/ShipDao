@@ -1,6 +1,6 @@
-package com.example.projekt.DAO;
+package com.example.project.DAO;
 
-import com.example.projekt.domain.ShipDeparture;
+import com.example.project.domain.ShipDeparture;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.time.LocalDate;

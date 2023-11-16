@@ -1,4 +1,4 @@
-package com.example.projekt.domain;
+package com.example.project.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +16,7 @@ import java.time.LocalDate;
 
 public class ShipDeparture {
 
-    private String ID;
+    private String id;
     private LocalDate departureDate;
     private String shipId;
     private Long numberOfPassengers;
