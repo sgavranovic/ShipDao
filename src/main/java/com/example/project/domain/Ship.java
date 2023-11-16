@@ -1,37 +1,22 @@
 package com.example.project.domain;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Document("ships")
+
 public class Ship {
+
     private String id;
     private String ime;
     private String maticnaLuka;
 
-    public Ship(String id, String ime, String maticnaLuka) {
-        this.id = id;
-        this.ime = ime;
-        this.maticnaLuka = maticnaLuka;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getIme() {
-        return ime;
-    }
-
-    public void setIme(String ime) {
-        this.ime = ime;
-    }
-
-    public String getMaticnaLuka() {
-        return maticnaLuka;
-    }
-
-    public void setMaticnaLuka(String maticnaLuka) {
-        this.maticnaLuka = maticnaLuka;
-    }
 }
