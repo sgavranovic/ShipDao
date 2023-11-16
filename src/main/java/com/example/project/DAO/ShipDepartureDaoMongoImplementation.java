@@ -32,10 +32,8 @@ public class ShipDepartureDaoMongoImplementation implements ShipDepartureDao {
         if (existingDepartureOptional.isEmpty()) {
             return repository.save(departure);
         }
-
         var existingDeparture = existingDepartureOptional.get();
         existingDeparture = mapper.update(existingDeparture, departure);
         return repository.save(existingDeparture);
-
     }
 }

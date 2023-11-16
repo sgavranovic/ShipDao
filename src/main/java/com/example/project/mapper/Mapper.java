@@ -1,7 +1,9 @@
 package com.example.project.mapper;
 
+import com.example.project.domain.Ship;
 import com.example.project.domain.ShipDeparture;
 import com.example.project.models.ShipDepartureModel;
+import com.example.project.models.ShipModel;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -13,7 +15,6 @@ public class Mapper {
         model.setShipId(source.getShipId());
         model.setNumberOfPassengers(source.getNumberOfPassengers());
         return model;
-
     }
 
     public ShipDeparture mapToDeparture(ShipDepartureModel model) {
@@ -41,5 +42,41 @@ public class Mapper {
         }
 
         return existingDeparture;
+    }
+
+    // SHIPS
+
+    public ShipModel mapToModelShip(Ship source) {
+
+        var model = new ShipModel();
+        model.setId(source.getId());
+        model.setIme(source.getIme());
+        model.setMaticnaLuka(source.getMaticnaLuka());
+        return model;
+    }
+
+    public Ship mapToShip(ShipModel model) {
+
+        var ship = new Ship();
+        ship.setId(model.getId());
+        ship.setIme(model.getIme());
+        ship.setMaticnaLuka(model.getMaticnaLuka());
+        return ship;
+
+    }
+    public Ship updateShip(Ship existingShip, Ship newShip) {
+
+        if(newShip.getId() != null){
+            existingShip.setId(existingShip.getId());
+        }
+
+        if(newShip.getIme() != null){
+            existingShip.setIme(existingShip.getIme());
+        }
+
+        if(newShip.getMaticnaLuka() != null){
+            existingShip.setMaticnaLuka(existingShip.getMaticnaLuka());
+        }
+        return existingShip;
     }
 }
