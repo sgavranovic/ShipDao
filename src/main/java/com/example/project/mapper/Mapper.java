@@ -15,7 +15,6 @@ public class Mapper {
         model.setShipId(source.getShipId());
         model.setNumberOfPassengers(source.getNumberOfPassengers());
         return model;
-
     }
 
     public ShipDeparture mapToDeparture(ShipDepartureModel model) {
@@ -47,36 +46,35 @@ public class Mapper {
 
     // SHIPS
 
-    public ShipModel mapToModel(Ship source) {
+    public ShipModel mapToModelShip(Ship source) {
 
         var model = new ShipModel();
         model.setId(source.getId());
         model.setIme(source.getIme());
         model.setMaticnaLuka(source.getMaticnaLuka());
         return model;
-
     }
 
-    public Ship mapToDeparture(ShipModel model) {
+    public Ship mapToShip(ShipModel model) {
 
-        var departure = new Ship();
-        departure.setId(model.getId());
-        departure.setIme(model.getIme());
-        departure.setMaticnaLuka(model.getMaticnaLuka());
-        return departure;
+        var ship = new Ship();
+        ship.setId(model.getId());
+        ship.setIme(model.getIme());
+        ship.setMaticnaLuka(model.getMaticnaLuka());
+        return ship;
 
     }
-    public Ship update(Ship existingShip, Ship newShip) {
+    public Ship updateShip(Ship existingShip, Ship newShip) {
 
         if(newShip.getId() != null){
             existingShip.setId(existingShip.getId());
         }
 
-        if(newShip != null){
+        if(newShip.getIme() != null){
             existingShip.setIme(existingShip.getIme());
         }
 
-        if(newShip != null){
+        if(newShip.getMaticnaLuka() != null){
             existingShip.setMaticnaLuka(existingShip.getMaticnaLuka());
         }
         return existingShip;

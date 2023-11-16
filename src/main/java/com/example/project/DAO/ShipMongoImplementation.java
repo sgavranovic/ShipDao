@@ -31,7 +31,7 @@ public class ShipMongoImplementation implements ShipDao {
         }
 
         var existingShip = existingShipOptional.get();
-        existingShip = mapper.update(existingShip, ship);
+        existingShip = mapper.updateShip(existingShip, ship);
         return repository2.save(existingShip);
     }
 }
